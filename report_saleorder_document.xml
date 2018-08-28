@@ -58,7 +58,7 @@
                         <tr>
                             <th>Description</th>
                             <th class="text-right">Quantity</th>
-                            <th class="text-right">Unit Price</th>
+                            <th class="text-right">P.U</th>
                             <th t-if="display_discount" class="text-right" groups="sale.group_discount_per_so_line">Disc.(%)</th>
                             <th class="text-right" groups="sale.group_show_price_subtotal">Price</th>
                             <th class="text-right price_tax_included" groups="sale.group_show_price_total">Total Price</th>
@@ -79,7 +79,7 @@
                             <t t-foreach="layout_category['lines']" t-as="l">
                                 <tr>
                                     <td><span t-field="l.name"/></td>
-                                    <td class="text-right">
+                                    <td>
                                         <span t-field="l.product_uom_qty"/>
                                         <span t-field="l.product_uom" groups="product.group_uom"/>
                                     </td>
@@ -129,6 +129,7 @@
                         <t t-foreach="doc._get_tax_amount_by_group()" t-as="amount_by_group">
                             <tr>
                                 <td><span t-esc="amount_by_group[0] or 'Taxes'"/></td>
+                                
                                 <td class="text-right">
                                     <span t-esc="amount_by_group[1]" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.pricelist_id.currency_id}"/>
                                 </td>
