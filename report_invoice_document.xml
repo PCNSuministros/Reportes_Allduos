@@ -6,18 +6,21 @@
                 <div name="invoice_address" class="col-xs-8">
                     <address  style="display: inline" t-field="o.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: True}"/>
                     <span  style="display: inline" t-if="o.partner_id.vat">RIF: <span t-field="o.partner_id.vat"/></span>
+                    <br/>
+                    <br/>
+                    <br/>
                 </div>
-                <p class="col-xs-4">
-                    <span t-if="o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid')">Invoice</span>
-                    <span t-if="o.type == 'out_invoice' and o.state == 'proforma2'">PRO-FORMA</span>
-                    <span t-if="o.type == 'out_invoice' and o.state == 'draft'">Draft Invoice</span>
-                    <span t-if="o.type == 'out_invoice' and o.state == 'cancel'">Cancelled Invoice</span>
-                    <span t-if="o.type == 'out_refund'">Refund</span>
-                    <span t-if="o.type == 'in_refund'">Vendor Refund</span>
-                    <span t-if="o.type == 'in_invoice'">Vendor Bill</span>
-                    <span t-field="o.number"/>
+                <p class="col-xs-4 pull-right">
+                    <span style="display: inline" t-if="o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid')">Invoice</span>
+                    <span style="display: inline" t-if="o.type == 'out_invoice' and o.state == 'proforma2'">PRO-FORMA</span>
+                    <span style="display: inline" t-if="o.type == 'out_invoice' and o.state == 'draft'">Draft Invoice</span>
+                    <span style="display: inline" t-if="o.type == 'out_invoice' and o.state == 'cancel'">Cancelled Invoice</span>
+                    <span style="display: inline" t-if="o.type == 'out_refund'">Refund</span>
+                    <span style="display: inline" t-if="o.type == 'in_refund'">Vendor Refund</span>
+                    <span style="display: inline" t-if="o.type == 'in_invoice'">Vendor Bill</span>
+                    <span style="display: inline" t-field="o.number"/>
 
-                    <div t-if="o.name">
+                <div t-if="o.name">
                     <p style="display: inline">Orden de Compra: </p>
                     <strong style="display: inline" t-field="o.name"/>
                 </div>
