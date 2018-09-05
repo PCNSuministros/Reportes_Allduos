@@ -1,8 +1,7 @@
 <?xml version="1.0"?>
-<!-- Hola Mundo -->
 <t t-name="account.report_invoice_document">
         <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})"/>
-        <div class="page" style="font-size: 11px">
+        <div class="page" style="font-size: 11px; font-family: roman-condensed">
             <div class="row">
                 <div name="invoice_address" class="col-xs-8">
                     <address  style="display: inline" t-field="o.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: True}"/>
@@ -10,16 +9,19 @@
                     <br/>
                     <br/>
                     <br/>
+                    <br/>
+                    <br/>
+                    <br/>
                 </div>
                 <p class="col-xs-4 pull-right">
-                    <span style="display: inline" t-if="o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid')">Invoice</span>
-                    <span style="display: inline" t-if="o.type == 'out_invoice' and o.state == 'proforma2'">PRO-FORMA</span>
-                    <span style="display: inline" t-if="o.type == 'out_invoice' and o.state == 'draft'">Draft Invoice</span>
-                    <span style="display: inline" t-if="o.type == 'out_invoice' and o.state == 'cancel'">Cancelled Invoice</span>
-                    <span style="display: inline" t-if="o.type == 'out_refund'">Refund</span>
-                    <span style="display: inline" t-if="o.type == 'in_refund'">Vendor Refund</span>
-                    <span style="display: inline" t-if="o.type == 'in_invoice'">Vendor Bill</span>
-                    <span style="display: inline" t-field="o.number"/>
+                    <span style="display: inline; font-weight: bold; font-size: 14px" t-if="o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid')">Invoice</span>
+                    <span style="display: inline; font-weight: bold; font-size: 14px" t-if="o.type == 'out_invoice' and o.state == 'proforma2'">PRO-FORMA</span>
+                    <span style="display: inline; font-weight: bold; font-size: 14px" t-if="o.type == 'out_invoice' and o.state == 'draft'">Draft Invoice</span>
+                    <span style="display: inline; font-weight: bold; font-size: 14px" t-if="o.type == 'out_invoice' and o.state == 'cancel'">Cancelled Invoice</span>
+                    <span style="display: inline; font-weight: bold; font-size: 14px" t-if="o.type == 'out_refund'">Refund</span>
+                    <span style="display: inline; font-weight: bold; font-size: 14px" t-if="o.type == 'in_refund'">Vendor Refund</span>
+                    <span style="display: inline; font-weight: bold; font-size: 14px" t-if="o.type == 'in_invoice'">Vendor Bill</span>
+                    <span style="display: inline; font-weight: bold; font-size: 14px" t-field="o.number"/>
 
                 <div t-if="o.name">
                     <p style="display: inline">Orden de Compra: </p>
@@ -85,7 +87,7 @@
 
             <div class="row">
                 <div class="col-xs-4 pull-right">
-                    <table class="table table-condensed">
+                    <table class="table table-condensed" style="font-size: 14px">
                         <tr class="border-black">
                             <td><strong>Subtotal</strong></td>
                             <td class="text-right">
